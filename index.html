@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Plinth – 3D Store Template</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">Plinth</div>
+  <button class="cartbtn" id="open" aria-label="Open cart">Cart<b id="count">0</b></button>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Shop things you can turn around.</h1>
+    <p>Spin the cube, tilt the cards, look at every product from the angle you want before you buy.</p>
+    <button class="cta" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">Browse products</button>
+  </div>
+  <div class="stage" id="stage" aria-label="Draggable 3D cube of product categories">
+    <div class="cube" id="cube">
+      <div class="face f1">👟<span>Shoes</span></div>
+      <div class="face f2">⌚<span>Watches</span></div>
+      <div class="face f3">🎧<span>Audio</span></div>
+      <div class="face f4">👜<span>Bags</span></div>
+      <div class="face f5">🕶️<span>Eyewear</span></div>
+      <div class="face f6">🧢<span>Caps</span></div>
+    </div>
+    <div class="shadow"></div>
+  </div>
+</section>
+
+<main id="shop">
+  <div class="bar">
+    <h2>New arrivals</h2>
+    <div class="chips" id="chips"></div>
+  </div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<div class="scrim" id="scrim"></div>
+<aside id="cart" aria-label="Shopping cart">
+  <div style="display:flex;justify-content:space-between;align-items:center"><h2 style="font-size:1.6rem">Your cart</h2><button class="chip" id="close">Close</button></div>
+  <div class="items" id="items"></div>
+  <div class="total"><span>Total</span><span id="total">$0</span></div>
+  <button class="cta" id="checkout">Check out</button>
+</aside>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
